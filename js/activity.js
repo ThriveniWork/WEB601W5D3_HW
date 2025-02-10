@@ -12,12 +12,28 @@ $(document).ready(function() {
         if ($(this).text().includes("Not Available")) {
             return;
         }
-        
+
         // Toggle selection class and background color
         if ($(this).hasClass("selected")) {
             $(this).removeClass("selected").css("background-color", "");
+            // Remove the activity from the display box
+            $("#result p").filter(function() {
+                return $(this).text() === $(this).text();
+            }).remove();
         } else {
             $(this).addClass("selected").css("background-color", "lightgreen");
+            // Add the activity to the display box
+            $('#result').append("<p>" + $(this).text() + "</p>");
+        }
+
+        // Show or hide the display box based on whether any activities are selected
+        if ($("table tbody td.selected").length > 0) {
+            $('#displaySelected').css('visibility', 'visible');
+            $('#displaySelected').css("margin-top", "2em");
+        } else {
+            $('#displaySelected').css('visibility', 'hidden');
+            $('#displaySelected').css("margin-top", "0em");
+            $('#result').empty(); // Clear the display box when no activities are selected
         }
     });
 });

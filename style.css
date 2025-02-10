@@ -352,3 +352,30 @@ footer #disclaimer p {
     transition: 0.3s;
 }
 
+#activities main #displaySelected {
+    visibility: hidden;
+    margin: 0 auto;
+    width: 600px;
+    border: 2px solid #5c9600;
+    padding: 0.75em;
+}
+
+#activities main #displaySelected #result, #activities main #displaySelected #sendinfo {
+    display: inline-block;
+    margin: 0;
+}
+
+#activities main #result {
+    width: 300px;
+    min-height: 50px;
+    padding: 0;
+}
+
+#activities main #result h4 {
+    margin-bottom:1em;
+    font-size:1.15em;
+}
+
+#activities main #displaySelected #sendinfo input[type="email"] {
+    width: 300px;
+}
