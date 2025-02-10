@@ -353,16 +353,20 @@ footer #disclaimer p {
 }
 
 #activities main #displaySelected {
-    visibility: hidden;
-    margin: 0 auto;
+    visibility: visible;
+    margin: 20px;
     width: 600px;
-    border: 2px solid #5c9600;
+    
     padding: 0.75em;
+    box-sizing: border-box;
 }
 
 #activities main #displaySelected #result, #activities main #displaySelected #sendinfo {
     display: inline-block;
     margin: 0;
+    border: 2px solid #5c9600;
+    padding: 0.75em;
+    box-sizing: border-box;
 }
 
 #activities main #result {

@@ -13,6 +13,11 @@ $(document).ready(function() {
             return;
         }
 
+        // Get the column index of the clicked cell
+        var columnIndex = $(this).index();
+        // Get the corresponding site name from the table header
+        var siteName = $("table thead th").eq(columnIndex).text();
+
         // Toggle selection class and background color
         if ($(this).hasClass("selected")) {
             $(this).removeClass("selected").css("background-color", "");
@@ -23,7 +28,7 @@ $(document).ready(function() {
         } else {
             $(this).addClass("selected").css("background-color", "lightgreen");
             // Add the activity to the display box
-            $('#result').append("<p>" + $(this).text() + "</p>");
+            $('#result').append("<p>" + $(this).text() + " at " + siteName + "</p>");
         }
 
         // Show or hide the display box based on whether any activities are selected
