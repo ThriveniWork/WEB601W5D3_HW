@@ -356,7 +356,6 @@ footer #disclaimer p {
     visibility: visible;
     margin: 20px;
     width: 600px;
-    
     padding: 0.75em;
     box-sizing: border-box;
 }
@@ -376,6 +375,7 @@ footer #disclaimer p {
 }
 
 #activities main #result h4 {
+    visibility: visible;
     margin-bottom:1em;
     font-size:1.15em;
 }

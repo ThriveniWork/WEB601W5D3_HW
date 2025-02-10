@@ -21,14 +21,20 @@ $(document).ready(function() {
         // Toggle selection class and background color
         if ($(this).hasClass("selected")) {
             $(this).removeClass("selected").css("background-color", "");
+
             // Remove the activity from the display box
-            $("#result p").filter(function() {
-                return $(this).text() === $(this).text();
-            }).remove();
+            var activityText = $(this).text();
+            $('#result p').each(function() {
+                if ($(this).text().includes(activityText)) {
+                    $(this).remove();
+                }
+            });
         } else {
             $(this).addClass("selected").css("background-color", "lightgreen");
+
             // Add the activity to the display box
-            $('#result').append("<p>" + $(this).text() + " at " + siteName + "</p>");
+            var activityText = $(this).text();
+            $('#result').append("<p>" + activityText + " at " + siteName + "</p>");
         }
 
         // Show or hide the display box based on whether any activities are selected
